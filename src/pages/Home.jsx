@@ -3,6 +3,8 @@ import background from "../assets/2.jpeg";
 import { FaStar } from "react-icons/fa";
 import { IoChevronForward } from "react-icons/io5";
 function Home() {
+
+  
   return (
     <>
     
