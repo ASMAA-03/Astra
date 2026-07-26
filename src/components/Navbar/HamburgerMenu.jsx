@@ -1,28 +1,11 @@
-import { Link } from "react-router-dom";
-import logo from "/logo.png";
-
-function Navbar() {
-  const links = 
-    [
-      {
-        id: 1,
-        name: "Home",
-        path: "/",
-
-      },
-      {
-        id: 2,
-        name: "About",
-        path: "/about"
-      },
-      {
-        id: 3,
-        name: "Contact",
-        path:"/contact"
-      },
-    ];
+import { HiMenu } from "react-icons/hi";
+/*
+still work on it
+*/
+function HamburguerMenu() {
   return (
-    <nav className="h-18 py-7 px-20 flex  items-center bg-black/5 rounded-b-4xl  fixed top-0 left-0 w-full z-50 sm:">
+    <>
+      <nav className="h-18 py-7 px-20 flex  items-center bg-black/5 rounded-b-4xl  fixed top-0 left-0 w-full z-50 sm:">
       <div className="inline-flex justify-center items-center gap-10">
         <div 
           style={
@@ -50,6 +33,7 @@ function Navbar() {
       </div>
       <div></div>
     </nav>
+    </>
   );
 }
-export default Navbar;
+export default HamburguerMenu;

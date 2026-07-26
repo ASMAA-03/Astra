@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import toyStory from "../assets/toyStory.jpeg";
 import insideOut from "../assets/insideOut.jpeg";
 import elemental from "../assets/elemental.jpeg";
+import overTheHedge from "../assets/overTheHedge.webp";
 import { FaStar } from "react-icons/fa";
 import { IoChevronForward } from "react-icons/io5";
 import { useState ,useEffect } from "react";
@@ -19,7 +20,7 @@ function Home() {
         rating: "8.3",
         year: "1995",
         duration: "1h 21m",
-        genres: "Animation • Adventure • Comedy",
+        genres: " Animation • Adventure • Comedy",
         description:
           "Woody, a loyal cowboy toy, has always been Andy's favorite. But when Buzz Lightyear joins the toy collection, rivalry quickly turns into an unforgettable adventure. Together, they discover the true meaning of friendship, teamwork, and belonging.",
         color:"bg-green-700",
@@ -30,11 +31,11 @@ function Home() {
         tagline:
           "Meet the little voices inside your head that shape every emotion.",
         rating: "8.1",
-        year: "2015",
+        year: "2025",
         duration: "1h 35m",
-        genres: "Animation • Family • Comedy",
+        genres: " Animation • Family • Comedy",
         description:
-          "Young Riley's emotions—Joy, Sadness, Anger, Fear, and Disgust—work together to guide her through a difficult move to a new city in this heartfelt Pixar adventure.",
+          "Young Riley's emotions Joy, Sadness, Anger, Fear, and Disgust.work together to guide her through a difficult move to a new city in this heartfelt Pixar adventure.",
         color:"bg-red-700",
       },
       {
@@ -46,9 +47,23 @@ function Home() {
         rating: "7.0",
         year: "2023",
         duration: "1h 41m",
-        genres: "Animation • Adventure • Comedy • Family",
+        genres: " Animation • Adventure • Comedy • Family",
         description:
           "Ember, a fiery and determined young woman, forms an unlikely friendship with Wade, a kind-hearted man made of water. As they explore Element City together, they challenge their beliefs about each other and discover that their differences can bring them closer.",
+        color: "bg-orange-700",
+      },
+            {
+        id: 4,
+        title: "Over the Hedge",
+        image: overTheHedge,
+        tagline:
+          "A clever raccoon convinces a group of woodland animals to explore the mysterious world beyond the hedge.",
+        rating: "6.7",
+        year: "2006",
+        duration: "1h 23m",
+        genres: " Animation • Adventure • Comedy • Family",
+        description:
+          "After waking from hibernation, a group of forest animals discover that their home has been replaced by a suburban neighborhood. Led by the witty raccoon RJ and the cautious turtle Verne, they embark on a hilarious adventure filled with friendship, teamwork, and unexpected challenges.",
         color: "bg-orange-700",
 }
     ]
@@ -60,7 +75,7 @@ function Home() {
 useEffect(() => {
   const interval = setInterval(() => {
     setCurrentMovie((prev) => (prev + 1) % movieDetail.length);
-  }, 4000); 
+  }, 9000); 
 
   return () => clearInterval(interval);
 }, []);
@@ -70,6 +85,7 @@ useEffect(() => {
     <>
     
       <motion.div
+        className="relative"
         key={currentMovie}
         initial={{ opacity: 0.8 }}
         animate={{ opacity: 1 }}
@@ -83,8 +99,8 @@ useEffect(() => {
         width: "100%",
       }}
       >
-        
-        <div className="fixed top-45 left-10">
+        <div className="absolute inset-0 bg-black/55">
+        <div className="fixed top-39 left-10 ">
           <div className=" py-2">
             <span
               className={`${movieDetail[currentMovie].color} text-amber-50 rounded-3xl px-14 py-2 mx-3`}>ASTRA ORIGINAL
@@ -106,7 +122,7 @@ useEffect(() => {
             
 
             <span
-              className="text-xl text-amber-50/70">{movieDetail[currentMovie].description }</span>
+              className="text-lg text-amber-50/70">{movieDetail[currentMovie].description }</span>
             
             <Link href="/">
               <button
@@ -128,7 +144,8 @@ useEffect(() => {
              transition duration-300 cursor-pointer"
 >
   <IoChevronForward size={30} />
-</button>
+          </button>
+          </div>
     </motion.div>
     </>
 
