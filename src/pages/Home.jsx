@@ -1,16 +1,81 @@
 import { Link } from "react-router-dom";
-import background from "../assets/2.jpeg";
+import toyStory from "../assets/toyStory.jpeg";
+import insideOut from "../assets/insideOut.jpeg";
+import elemental from "../assets/elemental.jpeg";
 import { FaStar } from "react-icons/fa";
 import { IoChevronForward } from "react-icons/io5";
+import { useState ,useEffect } from "react";
+import { motion } from "framer-motion";
+
 function Home() {
 
+  const movieDetail =
+    [
+      {
+        id: 1,
+        title: "Toy Story",
+        image: toyStory,
+        tagline:"A cowboy doll's world changes forever when a fearless space ranger arrives.",
+        rating: "8.3",
+        year: "1995",
+        duration: "1h 21m",
+        genres: "Animation • Adventure • Comedy",
+        description:
+          "Woody, a loyal cowboy toy, has always been Andy's favorite. But when Buzz Lightyear joins the toy collection, rivalry quickly turns into an unforgettable adventure. Together, they discover the true meaning of friendship, teamwork, and belonging.",
+        color:"bg-green-700",
+      },
+      {
+        title: "Inside Out",
+        image: insideOut,
+        tagline:
+          "Meet the little voices inside your head that shape every emotion.",
+        rating: "8.1",
+        year: "2015",
+        duration: "1h 35m",
+        genres: "Animation • Family • Comedy",
+        description:
+          "Young Riley's emotions—Joy, Sadness, Anger, Fear, and Disgust—work together to guide her through a difficult move to a new city in this heartfelt Pixar adventure.",
+        color:"bg-red-700",
+      },
+      {
+        id: 3,
+        title: "Elemental",
+        image: elemental,
+        tagline:
+          "In a city where fire, water, earth, and air live together, two opposites discover an unexpected connection.",
+        rating: "7.0",
+        year: "2023",
+        duration: "1h 41m",
+        genres: "Animation • Adventure • Comedy • Family",
+        description:
+          "Ember, a fiery and determined young woman, forms an unlikely friendship with Wade, a kind-hearted man made of water. As they explore Element City together, they challenge their beliefs about each other and discover that their differences can bring them closer.",
+        color: "bg-orange-700",
+}
+    ]
+
+  const[currentMovie,setCurrentMovie] = useState(0);
   
+
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentMovie((prev) => (prev + 1) % movieDetail.length);
+  }, 4000); 
+
+  return () => clearInterval(interval);
+}, []);
+
+
   return (
     <>
     
-     <div
+      <motion.div
+        key={currentMovie}
+        initial={{ opacity: 0.8 }}
+        animate={{ opacity: 1 }}
+        transition={{duration:0.6}}
       style={{
-        backgroundImage: `url(${background})`,
+        backgroundImage: `url(${movieDetail[currentMovie].image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -19,23 +84,33 @@ function Home() {
       }}
       >
         
-        <div className="fixed top-60 left-10">
-          <div className="">
-              <span className="bg-green-900/70 text-amber-50 rounded-3xl px-14 py-2 mx-3">ASTRA ORIGINAL</span>
-          <span className="bg-black/10 border border-amber-50/30 text-amber-50 rounded-3xl px-10 py-2">NOW STREAMING</span>
-          </div>
-          <div className="w-[520px] flex gap-4 flex-col">
-          <h1 className="text-8xl font-bold text-amber-50/70 [letter-spacing:4px]">Toy Story</h1>
+        <div className="fixed top-45 left-10">
+          <div className=" py-2">
+            <span
+              className={`${movieDetail[currentMovie].color} text-amber-50 rounded-3xl px-14 py-2 mx-3`}>ASTRA ORIGINAL
+            </span>
 
-          <span className="text-2xl text-amber-50/70">A cowboy doll's world changes forever when a fearless space ranger arrives.</span>
+            <span
+              className="bg-black/10 border border-amber-50/30 text-amber-50 rounded-3xl px-10 py-2">NOW STREAMING</span>
+          </div>
+          <div
+            className="w-[520px] flex gap-4 flex-col">
+            <h1
+              className="text-8xl font-bold text-amber-50/80 [letter-spacing:4px]">{movieDetail[currentMovie].title }</h1>
+
+            <span
+              className="text-xl text-amber-50/70">{movieDetail[currentMovie].tagline }</span>
           
-          <span className="text-[18px] text-amber-50/50"><FaStar className="text-yellow-300 inline m-2 "/><span className="text-amber-50">8.3 </span>• <span className="border border-gray-300/50 px-2 rounded-lg">1995</span> • G • 1h 21m • Animation • Adventure • Comedy</span>
+            <span
+              className="text-[18px] text-amber-50/50"><FaStar className="text-yellow-300 inline m-2 " /><span className="text-amber-50">{movieDetail[currentMovie].rating }</span>• <span className="border border-gray-300/50 px-2 rounded-lg">{movieDetail[currentMovie].year }</span> {movieDetail[currentMovie].duration }{movieDetail[currentMovie].genres }</span>
             
 
-          <span className="text-xl text-amber-50/70">Woody, a loyal cowboy toy, has always been Andy's favorite. But when Buzz Lightyear joins the toy collection, rivalry quickly turns into an unforgettable adventure. Together, they discover the true meaning of friendship, teamwork, and belonging.</span>
+            <span
+              className="text-xl text-amber-50/70">{movieDetail[currentMovie].description }</span>
             
             <Link href="/">
-            <button className="bg-amber-50 py-2 rounded-4xl text-2xl px-8 ">
+              <button
+                className="bg-amber-50 py-2 rounded-4xl text-xl px-8 ">
               More info
             </button>
             </Link>
@@ -43,8 +118,9 @@ function Home() {
           
         </div>
 
-<button
-  className="absolute right-8 top-1/2
+        <button
+          onClick={() => setCurrentMovie(currentMovie+1)}
+             className="absolute right-8 top-1/2
              w-14 h-14 rounded-full
              bg-black/40 text-white
              flex items-center justify-center
@@ -53,7 +129,7 @@ function Home() {
 >
   <IoChevronForward size={30} />
 </button>
-    </div>
+    </motion.div>
     </>
 
   );
