@@ -119,7 +119,7 @@ useEffect(() => {
         </div>
 
         <button
-          onClick={() => setCurrentMovie(currentMovie+1)}
+          onClick={() => setCurrentMovie((currentMovie+1)%movieDetail.length)}
              className="absolute right-8 top-1/2
              w-14 h-14 rounded-full
              bg-black/40 text-white
