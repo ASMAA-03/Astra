@@ -100,29 +100,31 @@ useEffect(() => {
       }}
       >
         <div className="absolute inset-0 bg-black/55">
-        <div className="fixed top-39 left-10 ">
-          <div className=" py-2">
+          <div className="absolute top-24 left-4 md:top-40 md:left-10 w-[90%] max-w-[520px] z-10">
+            <div className="py-8 md:py-2">
             <span
-              className={`${movieDetail[currentMovie].color} text-amber-50 rounded-3xl px-14 py-2 mx-3`}>ASTRA ORIGINAL
+              className={`${movieDetail[currentMovie].color} px-3 text-[12px] text-amber-50 rounded-3xl md:px-14 py-2 mx-3`}>ASTRA ORIGINAL
             </span>
 
             <span
-              className="bg-black/10 border border-amber-50/30 text-amber-50 rounded-3xl px-10 py-2">NOW STREAMING</span>
+                className="px-3 text-[12px] bg-black/10 border border-amber-50/30 text-amber-50 rounded-3xl md:px-10 py-2">NOW STREAMING
+            </span>
           </div>
           <div
-            className="w-[520px] flex gap-4 flex-col">
+            className="w-[360px] md:w-[520px] flex gap-4 flex-col ">
             <h1
-              className="text-8xl font-bold text-amber-50/80 [letter-spacing:4px]">{movieDetail[currentMovie].title }</h1>
+                className="text-4xl md:text-8xl font-bold text-amber-50/80 [letter-spacing:4px]">{movieDetail[currentMovie].title}
+            </h1>
 
             <span
-              className="text-xl text-amber-50/70">{movieDetail[currentMovie].tagline }</span>
+              className="text-[17px] md:text-xl text-amber-50/70">{movieDetail[currentMovie].tagline }</span>
           
             <span
-              className="text-[18px] text-amber-50/50"><FaStar className="text-yellow-300 inline m-2 " /><span className="text-amber-50">{movieDetail[currentMovie].rating }</span>• <span className="border border-gray-300/50 px-2 rounded-lg">{movieDetail[currentMovie].year }</span> {movieDetail[currentMovie].duration }{movieDetail[currentMovie].genres }</span>
+              className="text-[14px] md:text-[18px] text-amber-50/50"><FaStar className="text-yellow-300 inline m-2 " /><span className="text-amber-50">{movieDetail[currentMovie].rating }</span>• <span className="border border-gray-300/50 px-2 rounded-lg">{movieDetail[currentMovie].year }</span> {movieDetail[currentMovie].duration }{movieDetail[currentMovie].genres }</span>
             
 
             <span
-              className="text-lg text-amber-50/70">{movieDetail[currentMovie].description }</span>
+              className="text-[15px] md:text-lg text-amber-50/70">{movieDetail[currentMovie].description }</span>
             
             <Link href="/">
               <button
