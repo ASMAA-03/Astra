@@ -7,7 +7,7 @@ import { FaStar } from "react-icons/fa";
 import { IoChevronForward } from "react-icons/io5";
 import { useState ,useEffect } from "react";
 import { motion } from "framer-motion";
-
+import Button from "../components/Buttons";
 function Home() {
 
   const movieDetail =
@@ -100,7 +100,7 @@ useEffect(() => {
       }}
       >
         <div className="absolute inset-0 bg-black/55">
-          <div className="absolute top-24 left-4 md:top-40 md:left-10 w-[90%] max-w-[520px] z-10">
+          <div className="absolute top-24 left-4 md:top-37 md:left-10 w-[90%] max-w-[520px] z-10">
             <div className="py-8 md:py-2">
             <span
               className={`${movieDetail[currentMovie].color} px-3 text-[12px] text-amber-50 rounded-3xl md:px-14 py-2 mx-3`}>ASTRA ORIGINAL
@@ -127,21 +127,21 @@ useEffect(() => {
               className="text-[15px] md:text-lg text-amber-50/70">{movieDetail[currentMovie].description }</span>
             
             <Link href="/">
-              <button
-                className="bg-amber-50 py-2 rounded-4xl text-xl px-8 ">
-              More info
-            </button>
-            </Link>
+                <Button 
+                  className="bg-amber-50 py-2 rounded-4xl text-xl px-8 "
+                  text="More info">
+                </Button>
+              </Link>
+              
           </div>
-          
         </div>
 
         <button
           onClick={() => setCurrentMovie((currentMovie+1)%movieDetail.length)}
-             className="absolute right-8 top-1/2
+             className="hidden md:absolute md:right-8 md:top-1/2
              w-14 h-14 rounded-full
              bg-black/40 text-white
-             flex items-center justify-center
+             md:flex items-center justify-center
              hover:bg-black/70
              transition duration-300 cursor-pointer"
 >
