@@ -1,14 +1,57 @@
-# React + Vite
+# Astra
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Astra is a modern movie streaming web application inspired by contemporary streaming platforms such as Netflix. The project is developed with React and Tailwind CSS, focusing on responsive design, reusable components, and smooth user interactions.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Responsive user interface for desktop and mobile devices
+- Reusable React components
+- Interactive navigation
+- Smooth animations using Framer Motion
+- Clean and modern UI built with Tailwind CSS
 
-## React Compiler
+## Technologies
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- React Router
+- Tailwind CSS
+- Framer Motion
+- React Icons
+- Vite
 
+## Installation
 
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/Astra.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd Astra
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+## Project Structure
+
+```
+src/
+├── assets/
+├── components/
+├── pages/
+├── App.jsx
+├── main.jsx
+```
