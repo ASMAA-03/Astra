@@ -99,9 +99,8 @@ useEffect(() => {
         width: "100%",
       }}
       >
-        <div className="absolute">
-          <div className="absolute top-24 left-4 md:top-37 md:left-10 w-[90%] max-w-[520px] z-10">
-            <div className="py-8 md:py-2  inset-0 bg-black/55">
+<div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/35 to-transparent">          <div className="absolute top-24 left-4 md:top-37 md:left-10 w-[90%] max-w-[520px] z-10">
+            <div className="py-8 md:py-2">
             <span
               className={`${movieDetail[currentMovie].color} px-3 text-[12px] text-amber-50 rounded-3xl md:px-14 py-2 mx-3`}>ASTRA ORIGINAL
             </span>
