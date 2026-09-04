@@ -87,9 +87,9 @@ useEffect(() => {
       <motion.div
         className="relative"
         key={currentMovie}
-        initial={{ opacity: 0.8 }}
+        initial={{ opacity: 0.9 }}
         animate={{ opacity: 1 }}
-        transition={{duration:0.6}}
+        transition={{duration:0}}
       style={{
         backgroundImage: `url(${movieDetail[currentMovie].image})`,
         backgroundSize: "cover",
@@ -109,8 +109,13 @@ useEffect(() => {
                 className="px-3 text-[12px] bg-black/10 border border-amber-50/30 text-amber-50 rounded-3xl md:px-10 py-2">NOW STREAMING
             </span>
           </div>
-          <div
-            className="w-[360px] md:w-[520px] flex gap-4 flex-col ">
+         <motion.div
+  key={currentMovie}
+  initial={{ opacity: 0, x: -50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
+  className="w-[360px] md:w-[520px] flex gap-4 flex-col"
+>
             <h1
                 className="text-4xl md:text-8xl font-bold text-amber-50/80 [letter-spacing:4px]">{movieDetail[currentMovie].title}
             </h1>
@@ -132,7 +137,7 @@ useEffect(() => {
                 </Button>
               </Link>
               
-          </div>
+          </motion.div>
         </div>
 
         <button
