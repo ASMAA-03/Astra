@@ -32,7 +32,7 @@ import { HiMenu, HiX } from "react-icons/hi"; function Navbar() {
   initial={{ opacity: 0, y: -30 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.7, ease: "easeOut" }}
-  className="fixed top-0 left-0 w-full z-50 flex items-center justify-evenly px-3 py-2 md:px-20 md:py-4 rounded-b-4xl"
+  className="fixed top-0 left-0 w-full z-50 flex items-center justify-between pl-6 py-3 pr-3 md:px-20 md:py-4 rounded-b-4xl md:justify-evenly"
     >
       <div className="inline-flex justify-center items-center gap-10">
 

@@ -87,10 +87,7 @@ useEffect(() => {
       <motion.div
         className="relative"
         key={currentMovie}
-        initial={{ opacity: 0.9 }}
-        animate={{ opacity: 1 }}
-        transition={{duration:0}}
-      style={{
+        style={{
         backgroundImage: `url(${movieDetail[currentMovie].image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
