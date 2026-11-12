@@ -7,12 +7,10 @@ import RegisterForm from "./features/auth/components/RegisterForm";
 function App() {
   return (
     <div className="h-full">
-      <Navbar />
-
       <Routes>
-        <Route path="/astra" element={<Home />} />
-        <Route path="/astra/login" element={<LoginForm />} />
-        <Route path="/astra/register" element={<RegisterForm />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/register" element={<RegisterForm/>} />
       </Routes>
     </div>
   );

@@ -8,6 +8,9 @@ import { IoChevronForward } from "react-icons/io5";
 import { useState ,useEffect } from "react";
 import { motion } from "framer-motion";
 import Button from "../components/Buttons";
+import Navbar from "../components/Navbar/Navbar";
+import RegisterForm from "../features/auth/components/RegisterForm";
+import LoginForm from "../features/auth/components/LoginForm";
 function Home() {
 
   const movieDetail =
@@ -69,7 +72,7 @@ function Home() {
     ]
 
   const[currentMovie,setCurrentMovie] = useState(0);
-  
+  const [isLogin, setIsLogin] = useState(false);
 
 
 useEffect(() => {
@@ -83,8 +86,10 @@ useEffect(() => {
 
   return (
     <>
-    
-      <motion.div
+      <div className="relative min-h-screen">
+       <Navbar />
+
+        <motion.div
         className="relative"
         key={currentMovie}
         style={{
@@ -150,7 +155,15 @@ useEffect(() => {
   <IoChevronForward size={30} />
           </button>
           </div>
-    </motion.div>
+        </motion.div>
+      
+        {isLogin ?
+        (
+           <RegisterForm onLogin={() => setIsLogin(false)}/>
+        ):(
+           <LoginForm onRegister={()=> setIsLogin(true)}/>
+        )}
+        </div>
     </>
 
   );

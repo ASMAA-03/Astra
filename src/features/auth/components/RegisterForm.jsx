@@ -1,15 +1,15 @@
 import Logo from "../../../components/Logo/Logo";
 import { Link } from "react-router-dom";
-export default function RegisterForm(){
+export default function RegisterForm({onLogin}){
 
   return (
     <>
       <section
-      className="bg-[oklch(0.45_0.11_9)] flex items-center justify-center min-h-screen sm:px-8 sm:py-12 lg:max-h-screen">     
+      className="bg-black/10 fixed inset-0 z-[100] backdrop-blur-sm flex items-center justify-center min-h-fit sm:px-8 sm:py-12 lg:max-h-screen">     
    
-        <form className="w-full max-w-175" >
+        <form className="w-full max-w-125 " >
           <fieldset
-            className="border border-[oklch(1_0_0/35%)] min-h-125 w-full rounded-2xl flex flex-col p-5 sm:p-8 lg:p-12 gap-4 sm:gap-5">
+            className="md:border border-[oklch(1_0_0/35%)] max-h-195 w-full rounded-2xl flex flex-col p-5 gap-2 sm:p-3 lg:p-5 sm:gap-2 ">
             <legend
             className="text-[oklch(0.985_0.005_20)] flex gap-4 text-3xl" 
             >
@@ -27,43 +27,51 @@ export default function RegisterForm(){
               Create a member account and keep your watchlist in focus.
             </span>
             </div>
-
-             <label
+          
+            <div className="">
+               <label
               className="text-[oklch(0.92_0.02_15)]">Your name
-            </label>
+            </label><br/>
             <input
               type="text"
               placeholder="Taylor Viewer"
-              className="border-2 border-[oklch(1_0_0/40%)] bg-[oklch(0.38_0.1_9/60%)] text-[oklch(0.985_0.005_20)] placeholder:text-[oklch(0.75_0.04_12)] rounded-2xl p-3 outline-none"
+              className="border-2 border-[oklch(1_0_0/40%)] w-full md:bg-[oklch(0.38_0.1_9/60%)] text-[oklch(0.985_0.005_20)] placeholder:text-[oklch(0.75_0.04_12)] rounded-2xl p-3 outline-none"
             >
             </input>
-               <br/>
+               <br/>  
+            </div>
+          
 
-            
+            <div>
                <label
-              className="text-[oklch(0.92_0.02_15)]">Email address :
-            </label>
+              className="text-[oklch(0.92_0.02_15)]">Email address 
+            </label><br/>
             <input
               type="email"
               placeholder="you@example.com"
-              className="border-2 border-[oklch(1_0_0/40%)] bg-[oklch(0.38_0.1_9/60%)] text-[oklch(0.985_0.005_20)] placeholder:text-[oklch(0.75_0.04_12)] rounded-2xl p-3 outline-none"
+              className="border-2 w-full border-[oklch(1_0_0/40%)] md:bg-[oklch(0.38_0.1_9/60%)] text-[oklch(0.985_0.005_20)] placeholder:text-[oklch(0.75_0.04_12)] rounded-2xl p-3 outline-none"
             >
             </input>
                <br/>
+            </div>
            
-             <label
-              className="text-[oklch(0.92_0.02_15)] ">Password :
-            </label>
+            <div>
+            <label
+              className="text-[oklch(0.92_0.02_15)] ">Password  
+            </label><br/>
             <input
               type="password"
               placeholder="At least 8 characters"
-              className="border-2 border-[oklch(1_0_0/40%)] bg-[oklch(0.38_0.1_9/60%)] text-[oklch(0.985_0.005_20)] placeholder:text-[oklch(0.75_0.04_12)] rounded-2xl p-3 outline-none">
+              className="border-2 border-[oklch(1_0_0/40%)] w-full md:bg-[oklch(0.38_0.1_9/60%)] text-[oklch(0.985_0.005_20)] placeholder:text-[oklch(0.75_0.04_12)] rounded-2xl p-3 outline-none">
             </input>
+            
+            </div>
             
 
             <button
               type="submit"
-              className="p-3 bg-[oklch(0.985_0.005_20)] text-[oklch(0.45_0.11_9)] hover:bg-[oklch(0.70_0.21_9)] hover:text-[oklch(0.985_0.005_20)] hover:cursor-pointer transition-colors rounded-2xl"
+              onClick={"/"}
+              className="p-3 bg-[oklch(1_0_0/40%)] md:bg-[oklch(0.985_0.005_20)] text-[oklch(0.45_0.11_9)] hover:bg-[oklch(0.70_0.21_9)] hover:text-[oklch(0.985_0.005_20)] hover:cursor-pointer transition-colors rounded-2xl"
               >
               Create account
             </button>
@@ -75,7 +83,7 @@ export default function RegisterForm(){
               Already have an account?
               <span
                 className="cursor-pointer text-[oklch(0.80_0.11_9)] hover:underline">
-             <Link to="/">Sign in</Link>
+             <Link onClick={onLogin}>Sign in</Link>
               </span>
             </p>
           </fieldset>    

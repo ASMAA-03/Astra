@@ -1,22 +1,21 @@
 import Logo from "../../../components/Logo/Logo";
 import { Link } from "react-router-dom";
-export default function LoginForm(){
+export default function LoginForm({onRegister}){
 
   return (
     <>
       <section
-      className="bg-[oklch(0.45_0.11_9)] flex items-center justify-center min-h-screen sm:px-8 sm:py-12 lg:max-h-screen">
+      className="bg-black/10 fixed inset-0 z-[100] backdrop-blur-sm flex items-center justify-center min-h-fit sm:px-8 sm:py-12 lg:max-h-screen">
        
-      <form className="w-full max-w-175" >
-          
+      <form className="w-full max-w-125 " >
           <fieldset
-            className="border border-[oklch(1_0_0/35%)] min-h-125 w-full rounded-2xl flex flex-col p-5 sm:p-8 lg:p-12 gap-4 sm:gap-5">
+            className="md:border border-[oklch(1_0_0/35%)] max-h-195 w-full rounded-2xl flex flex-col p-5 gap-2 sm:p-3 lg:p-5 sm:gap-2 ">
             <legend
             className="text-[oklch(0.985_0.005_20)] flex gap-4 text-3xl" 
             >
-              <Logo />Login
+              <Logo />Create
             </legend>
-            
+
           <div className="flex flex-col gap-1 mb-5">
             <span className="text-xs tracking-widest font-semibold text-[oklch(0.70_0.21_9)]">
               WELCOME BACK
@@ -36,7 +35,7 @@ export default function LoginForm(){
             <input
               type="email"
               placeholder="you@example.com"
-              className="border-2 border-[oklch(1_0_0/40%)] bg-[oklch(0.38_0.1_9/60%)] text-[oklch(0.985_0.005_20)] placeholder:text-[oklch(0.75_0.04_12)] rounded-2xl p-3 outline-none"
+              className="border-2 border-[oklch(1_0_0/40%)] md:bg-[oklch(0.38_0.1_9/60%)] text-[oklch(0.985_0.005_20)] placeholder:text-[oklch(0.75_0.04_12)] rounded-2xl p-3 outline-none"
             >
             </input>
                <br/>
@@ -47,13 +46,13 @@ export default function LoginForm(){
             <input
               type="password"
               placeholder="Enter your password"
-              className="border-2 border-[oklch(1_0_0/40%)] bg-[oklch(0.38_0.1_9/60%)] text-[oklch(0.985_0.005_20)] placeholder:text-[oklch(0.75_0.04_12)] rounded-2xl p-3 outline-none">
+              className="border-2 border-[oklch(1_0_0/40%)] md:bg-[oklch(0.38_0.1_9/60%)] text-[oklch(0.985_0.005_20)] placeholder:text-[oklch(0.75_0.04_12)] rounded-2xl p-3 outline-none">
             </input>
             
 
             <button
               type="submit"
-              className="p-3 bg-[oklch(0.985_0.005_20)] text-[oklch(0.45_0.11_9)] hover:bg-[oklch(0.70_0.21_9)] hover:text-[oklch(0.985_0.005_20)] hover:cursor-pointer transition-colors rounded-2xl"
+              className="p-3 bg-[oklch(1_0_0/40%)] md:bg-[oklch(0.985_0.005_20)] text-[oklch(0.45_0.11_9)] hover:bg-[oklch(0.70_0.21_9)] hover:text-[oklch(0.985_0.005_20)] hover:cursor-pointer transition-colors rounded-2xl "
               >
               Enter Reelroom
             </button>
@@ -65,7 +64,7 @@ export default function LoginForm(){
               New to ReelRoom?{" "}
               <span
                 className="cursor-pointer text-[oklch(0.80_0.11_9)] hover:underline">
-                <Link to="/registerform">Create an account</Link>
+                <Link onClick={onRegister}>Create an account</Link>
               </span>
             </p>
            
