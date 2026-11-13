@@ -1,11 +1,11 @@
 import Logo from "../../../components/Logo/Logo";
 import { Link } from "react-router-dom";
-export default function RegisterForm({onLogin}){
+export default function RegisterForm(){
 
   return (
     <>
       <section
-      className="bg-black/10 fixed inset-0 z-[100] backdrop-blur-sm flex items-center justify-center min-h-fit sm:px-8 sm:py-12 lg:max-h-screen">     
+      className="bg-black/20 fixed inset-0 z-[100] backdrop-blur-sm flex items-center justify-center min-h-fit sm:px-8 sm:py-12 lg:max-h-screen">     
    
         <form className="w-full max-w-125 " >
           <fieldset
@@ -83,7 +83,7 @@ export default function RegisterForm({onLogin}){
               Already have an account?
               <span
                 className="cursor-pointer text-[oklch(0.80_0.11_9)] hover:underline">
-             <Link onClick={onLogin}>Sign in</Link>
+             <Link to="/Astra/login">Sign in</Link>
               </span>
             </p>
           </fieldset>    

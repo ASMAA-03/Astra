@@ -1,11 +1,11 @@
 import Logo from "../../../components/Logo/Logo";
 import { Link } from "react-router-dom";
-export default function LoginForm({onRegister}){
+export default function LoginForm(){
 
   return (
     <>
       <section
-      className="bg-black/10 fixed inset-0 z-[100] backdrop-blur-sm flex items-center justify-center min-h-fit sm:px-8 sm:py-12 lg:max-h-screen">
+      className="bg-black/20 fixed inset-0 z-[100] backdrop-blur-sm flex items-center justify-center min-h-fit sm:px-8 sm:py-12 lg:max-h-screen">
        
       <form className="w-full max-w-125 " >
           <fieldset
@@ -64,7 +64,7 @@ export default function LoginForm({onRegister}){
               New to ReelRoom?{" "}
               <span
                 className="cursor-pointer text-[oklch(0.80_0.11_9)] hover:underline">
-                <Link onClick={onRegister}>Create an account</Link>
+                <Link to="/Astra/register">Create an account</Link>
               </span>
             </p>
            
